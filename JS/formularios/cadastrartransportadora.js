@@ -7,7 +7,7 @@ export function formcadastrartransportadora(setor, acao) {
       <div style="font-size: 35px; color: #ffffff; border-top: 1px solid #0056f3; margin-top: 5px; padding-top: 3px; width: 60%; text-align: center; text-transform: uppercase;"> ${acao} </div>
     </header>
 
-    <!-- ================= BUSCA (PADRÃO PÍLULA) ================= -->
+    <!-- ================= BUSCA ================= -->
     <div class="header-busca" style="margin-bottom: 20px;">
         <div class="busca-wrapper" style="display:flex; gap:10px; width:100%; margin-bottom:20px; align-items:center;">
             <input id="tr-busca-id" type="text" class="input-id" placeholder="Busca Transportadora por ID" style="height: 40px; border-radius: 50px; border:none; padding:0 25px; flex:1; font-weight:bold;">
@@ -18,7 +18,6 @@ export function formcadastrartransportadora(setor, acao) {
     <!-- ================= CORPO ================= -->
     <div class="form-grid-principal" style="display: flex; flex-wrap: wrap; gap: 30px; width: 100%;">
       
-      <!-- COLUNA ESQUERDA: DADOS DA TRANSPORTADORA -->
       <div class="col" style="flex: 1; min-width: 320px;">
         <div class="info-auto" style="background-color:#0056f3;"> DADOS DA TRANSPORTADORA </div>
         
@@ -27,7 +26,9 @@ export function formcadastrartransportadora(setor, acao) {
             <input id="tr-logo" type="file" accept="image/*" style="padding-top: 8px; background: white;">
         </div>
 
-        <!-- CAMPO OCULTO QUE ARMAZENA O TEXTO DA IMAGEM PARA O EXCEL -->
+        <!-- STATUS DA CONVERSÃO PYTHON -->
+        <div id="tr-status-api" style="display:none; margin-top:5px; padding:5px; border-radius:10px; text-align:center; font-size:12px; font-weight:bold;"></div>
+
         <input type="hidden" id="tr-logo-base64">
 
         <div class="input-group">
@@ -40,37 +41,27 @@ export function formcadastrartransportadora(setor, acao) {
             <input id="tr-razao-social" type="text">
         </div>
 
-        <div class="input-group">
-            <label style="background-color:#0056f3;">DESCRIÇÃO</label>
-            <input id="tr-descricao" type="text">
-        </div>
-
-        <!-- ÁREA DE PREVIEW DA IMAGEM -->
-        <div style="margin-top:15px; text-align:center; min-height: 100px;">
-            <p id="txt-loading-logo" style="display:none; color:white;">Processando imagem em Python...</p>
-            <img id="tr-logo-preview" style="max-width:180px; display:none; border-radius:10px; border:2px solid #0056f3; background:white; padding:5px;" />
+        <!-- ÁREA DE PREVIEW -->
+        <div style="margin-top:15px; text-align:center; border: 2px dashed #0056f3; border-radius: 15px; padding: 10px;">
+            <img id="tr-logo-preview" style="max-width:150px; display:none; border-radius:10px; background:white; padding:5px;" />
+            <p id="tr-preview-placeholder" style="color:white; opacity:0.5;">Aguardando Logo...</p>
         </div>
       </div>
 
-      <!-- COLUNA DIREITA: TIPO DE MATERIAL -->
       <div class="col" style="flex: 1; min-width: 320px;">
         <div class="info-auto" style="background-color:#4cd964;"> TIPO DE MATERIAL </div>
-        
         <div class="input-group">
             <label style="background-color:#4cd964;">RESID. INDUSTR.</label>
             <select id="tr-residuos-industriais">
-                <option value="">Selecione...</option>
-                <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
+                <option value="Sim">Sim</option>
             </select>
         </div>
-
         <div class="input-group">
             <label style="background-color:#4cd964;">MATÉRIA PRIMA</label>
             <select id="tr-materia-prima">
-                <option value="">Selecione...</option>
-                <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
+                <option value="Sim">Sim</option>
             </select>
         </div>
       </div>
@@ -78,11 +69,10 @@ export function formcadastrartransportadora(setor, acao) {
     </div>
 
     <!-- ================= BOTÕES ================= -->
-    <div class="form-footer" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px;">
+    <div class="form-footer" style="display: flex; gap: 10px; margin-top: 30px;">
       <button class="btn-voltar" onclick="location.reload()" style="background-color: #6c757d; flex: 1;">VOLTAR</button>
       <button class="btn-registrar-central" id="tr-btn-cadastrar" style="background-color: #0056f3; color: white; flex: 2;">CADASTRAR</button>
-      <button class="btn-salvar" id="tr-btn-salvar" style="background-color: #28a745; color: white; flex: 2;">SALVAR ALTERAÇÕES</button>
-      <button class="btn-excluir" id="tr-btn-excluir" style="background-color: #dc3545; color: white; flex: 1;">EXCLUIR</button>
+      <button id="tr-btn-salvar" style="background-color: #28a745; color: white; flex: 2;">SALVAR</button>
     </div>
   </div>
   `;
