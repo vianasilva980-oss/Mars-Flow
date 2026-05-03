@@ -22,7 +22,10 @@ import { formimportarperiodo } from './formularios/importarperiodo.js';
 import { formcargasaprovadas } from './formularios/cargasaprovadas.js'; 
 
 // Importa a função visual do Teams do seu arquivo chatinterno.js
-import { gerarHTMLNavegadorMicrosoft } from './formularios/chatinterno.js'; 
+import { gerarHTMLNavegadorMicrosoft } from './formularios/chatinterno.js';
+
+import { initTransportadoraEvents } from './eventos-transportadora.js';
+
 
 /* ========================================================= 
    2. CARREGAMENTO DE FORMULÁRIOS 
@@ -72,7 +75,13 @@ function carregarFormulario(tipo) {
         return; 
     } 
 
-    painel.innerHTML = html; 
+    painel.innerHTML = html;
+
+    // ✅ ADICIONE ESTE BLOCO AQUI:
+    // Se o formulário carregado for o de transportadora, ativa a API Python de imagem
+    if (tipo === "cadastrartransportadora") {
+        initTransportadoraEvents();
+    }
 
     // --- ATRIBUIÇÃO DE EVENTOS DINÂMICOS --- 
     const btn = painel.querySelector(".btn-registrar-central");
