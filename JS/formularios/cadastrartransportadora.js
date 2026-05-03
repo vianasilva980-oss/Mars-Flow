@@ -15,10 +15,10 @@ export function formcadastrartransportadora(setor, acao) {
         </div>
     </div>
 
-    <!-- ================= CORPO (DIVIDIDO EM 2 COM FLEX) ================= -->
+    <!-- ================= CORPO ================= -->
     <div class="form-grid-principal" style="display: flex; flex-wrap: wrap; gap: 30px; width: 100%;">
       
-      <!-- COLUNA ESQUERDA: DADOS PRINCIPAIS (AZUL) -->
+      <!-- COLUNA ESQUERDA: DADOS DA TRANSPORTADORA -->
       <div class="col" style="flex: 1; min-width: 320px;">
         <div class="info-auto" style="background-color:#0056f3;"> DADOS DA TRANSPORTADORA </div>
         
@@ -26,6 +26,9 @@ export function formcadastrartransportadora(setor, acao) {
             <label style="background-color:#0056f3;">LOGO</label>
             <input id="tr-logo" type="file" accept="image/*" style="padding-top: 8px; background: white;">
         </div>
+
+        <!-- CAMPO OCULTO QUE ARMAZENA O TEXTO DA IMAGEM PARA O EXCEL -->
+        <input type="hidden" id="tr-logo-base64">
 
         <div class="input-group">
             <label style="background-color:#0056f3;">CNPJ</label>
@@ -42,34 +45,44 @@ export function formcadastrartransportadora(setor, acao) {
             <input id="tr-descricao" type="text">
         </div>
 
-        <!-- PREVIEW DA LOGO -->
-        <div style="margin-top:15px; text-align:center;">
-            <img id="tr-logo-preview" style="max-width:180px; display:none; border-radius:10px; border:2px solid #0056f3;" />
+        <!-- ÁREA DE PREVIEW DA IMAGEM -->
+        <div style="margin-top:15px; text-align:center; min-height: 100px;">
+            <p id="txt-loading-logo" style="display:none; color:white;">Processando imagem em Python...</p>
+            <img id="tr-logo-preview" style="max-width:180px; display:none; border-radius:10px; border:2px solid #0056f3; background:white; padding:5px;" />
         </div>
       </div>
 
-      <!-- COLUNA DIREITA: TIPO DE MATERIAL (VERDE) -->
+      <!-- COLUNA DIREITA: TIPO DE MATERIAL -->
       <div class="col" style="flex: 1; min-width: 320px;">
         <div class="info-auto" style="background-color:#4cd964;"> TIPO DE MATERIAL </div>
         
         <div class="input-group">
             <label style="background-color:#4cd964;">RESID. INDUSTR.</label>
-            <input id="tr-residuos-industriais" type="text" placeholder="Sim / Não">
+            <select id="tr-residuos-industriais">
+                <option value="">Selecione...</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
         </div>
 
         <div class="input-group">
             <label style="background-color:#4cd964;">MATÉRIA PRIMA</label>
-            <input id="tr-materia-prima" type="text" placeholder="Sim / Não">
+            <select id="tr-materia-prima">
+                <option value="">Selecione...</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
         </div>
       </div>
 
     </div>
 
-    <!-- ================= BOTÕES (EMPILHAM NO MOBILE) ================= -->
-    <div class="form-footer">
-      <button class="btn-voltar" onclick="location.reload()" style="background-color: #28a745;">VOLTAR</button>
-      <button class="btn-registrar-central" id="tr-btn-cadastrar" style="background-color: #0056f3; color: white;">CADASTRAR TRANSPORTADORA</button>
-      <button class="btn-salvar" id="tr-btn-salvar" style="background-color: #28a745; color: white;">SALVAR</button>
+    <!-- ================= BOTÕES ================= -->
+    <div class="form-footer" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px;">
+      <button class="btn-voltar" onclick="location.reload()" style="background-color: #6c757d; flex: 1;">VOLTAR</button>
+      <button class="btn-registrar-central" id="tr-btn-cadastrar" style="background-color: #0056f3; color: white; flex: 2;">CADASTRAR</button>
+      <button class="btn-salvar" id="tr-btn-salvar" style="background-color: #28a745; color: white; flex: 2;">SALVAR ALTERAÇÕES</button>
+      <button class="btn-excluir" id="tr-btn-excluir" style="background-color: #dc3545; color: white; flex: 1;">EXCLUIR</button>
     </div>
   </div>
   `;
