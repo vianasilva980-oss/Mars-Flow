@@ -1,5 +1,5 @@
 // No topo do seu sw.js
-const VERSION = '1.0.2';
+const VERSION = '1.0.1';
 
 self.addEventListener('message', (event) => {
     if (event.data === 'GET_VERSION') {
@@ -10,7 +10,7 @@ self.addEventListener('message', (event) => {
     }
 });
 
-const CACHE_NAME = 'mars-flow-v03';
+const CACHE_NAME = 'mars-flow-v01';
 
 // Lista de ativos (Mantenha exatamente como você definiu)
 const ASSETS = [
@@ -30,19 +30,19 @@ const ASSETS = [
   './portaria.html',
   './qualidade.html',
   './seguranca.html',
-  './CSS/main.css',
-  './CSS/base.css',
-  './CSS/header.css',
-  './CSS/layout.css',
-  './CSS/sidebar.css',
-  './CSS/components.css',
-  './CSS/forms.css',
-  './CSS/chat.css',
-  './CSS/footer.css',
-  './CSS/print.css',
-  './CSS/responsive.css',
-  './CSS/login.css',
-  './CSS/pwa.css',
+  './css/main.css',
+  './css/base.css',
+  './css/header.css',
+  './css/layout.css',
+  './css/sidebar.css',
+  './css/components.css',
+  './css/forms.css',
+  './css/chat.css',
+  './css/footer.css',
+  './css/print.css',
+  './css/responsive.css',
+  './css/login.css',
+  './css/pwa.css',
   './JS/operacao.js',
   './JS/formularios/adicionarcarga.js',
   './JS/formularios/cadastrarfornecedor.js',
