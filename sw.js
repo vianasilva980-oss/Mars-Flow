@@ -1,5 +1,5 @@
 // No topo do seu sw.js
-const VERSION = '1.0.1';
+const VERSION = '1.0.2';
 
 self.addEventListener('message', (event) => {
     if (event.data === 'GET_VERSION') {
@@ -10,7 +10,7 @@ self.addEventListener('message', (event) => {
     }
 });
 
-const CACHE_NAME = 'mars-flow-v02';
+const CACHE_NAME = 'mars-flow-v03';
 
 // Lista de ativos (Mantenha exatamente como você definiu)
 const ASSETS = [
