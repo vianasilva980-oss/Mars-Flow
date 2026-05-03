@@ -1,0 +1,155 @@
+/* =========================================================
+   RESPONSIVIDADE GLOBAL DO SISTEMA
+   ========================================================= */
+
+/* ==========================================
+   HEADER (TOPO)
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .topo-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pilula-direita {
+        width: 100%;
+        border-radius: 30px;
+        padding: 15px;
+    }
+
+    .logo-box {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   LAYOUT PRINCIPAL
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .container-principal {
+        flex-direction: column;
+    }
+
+    .area-ilustracao {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .img-central {
+        max-width: 100%;
+    }
+
+    .area-trabalho-azul {
+        margin: 10px 0;
+        border-radius: 20px;
+    }
+}
+
+/* ==========================================
+   SIDEBAR (VIRA HORIZONTAL)
+   ========================================== */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        flex-direction: row;
+        width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        border-radius: 25px;
+    }
+
+    .sidebar:hover {
+        width: 100%;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+    }
+
+    .menu-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu-item span {
+        opacity: 1;
+        font-size: 11px;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   FORMULÁRIO
+   ========================================== */
+
+@media (max-width: 800px) {
+
+    .form-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .input-id {
+        width: 100%;
+    }
+
+    .header-busca {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-grid-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .row-flex {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================
+   BOTÕES
+   ========================================== */
+
+@media (max-width: 800px) {
+
+    .btn-voltar,
+    .btn-registrar-central,
+    .btn-salvar {
+        width: 100% !important;
+        max-width: none !important;
+        height: 30px !important;
+        font-size: 20px !important;
+    }
+}
+
+/* ==========================================
+   CHAT (FLUTUANTE E EXPANDIDO)
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    #chat-box {
+        width: 90%;
+        right: 5%;
+    }
+
+    .chat-full-container {
+        padding: 15px;
+    }
+
+    .chat-full-input-area input {
+        font-size: 14px;
+    }
+}

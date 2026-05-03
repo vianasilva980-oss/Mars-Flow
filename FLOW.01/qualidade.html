@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARS - Operação de Qualidade</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="topo-container">
+    <div class="pilula-esquerda">
+        <div class="pill-group">
+            <!-- Ícone Qualidade -->
+            <div class="circle-user">💎</div>
+            <div class="pill-setores" id="nome-setor-pill">QUALIDADE</div>
+        </div>
+    </div>
+
+    <div class="pilula-direita">
+        <div class="logo-box">MARS</div>
+        <div class="desc-box" id="descricao-setor">
+            Controle e gerenciamento de QUALIDADE
+        </div>
+    </div>
+</header>
+
+<main class="container-principal">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <!-- BOTÃO VOLTAR / SAIR -->
+        <div class="menu-item btn-home" onclick="window.location.href='index.html'">
+            <div class="menu-emoji">🏠</div> 
+            <span>SAIR / HOME</span>
+        </div>
+
+        <div class="menu-item" id="acao-liberacaodevisitantes">
+            <div class="menu-emoji">🛂</div>
+            <span>LIBERAÇÃO DE VISITANTES</span>
+        </div>
+
+        <div class="menu-item" id="acao-liberacaodeareasrestritas">
+            <div class="menu-emoji">🔐</div>
+            <span>LIBERAÇÃO DE ÁREAS RESTRITAS</span>
+        </div>
+
+        <div class="menu-item" id="acao-fulldefenser">
+            <div class="menu-emoji">🛡️</div>
+            <span>FULL DEFENSER</span>
+        </div>
+
+        <div class="menu-item" id="acao-recebimentos">
+            <div class="menu-emoji">📥</div>
+            <span>RECEBIMENTOS</span>
+        </div>
+    
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <section class="area-ilustracao" id="painel-qualidade">
+        
+        <img src="img/img/areaprincipal.png" 
+            class="img-central" 
+            id="img-boas-vindas" 
+            onclick="proximoSlide()" 
+            style="cursor: pointer;">
+
+        <!-- CONTAINER DE CONTEÚDO -->
+        <div id="container-formularios" style="display: none; width: 100%; height: 100%; flex-direction: row; align-items: stretch;">
+            
+            <div class="login-sidebar">
+                <div class="user-icon-large">
+                    <div class="circle-user" style="width: 100px; height: 100px; font-size: 50px; margin: 0 auto;">💎</div>
+                </div>
+                <h2 id="titulo-login">PAINEL QUALIDADE</h2>
+                <div id="info-setor" style="color: white; text-align: center;"> 
+                    <p>Controle de Segurança de Alimentos</p>
+                </div>
+            </div>
+
+            <div class="login-main-view" id="area-trabalho" style="flex-grow: 1; background-color: #001f5c; padding: 20px;">
+                <!-- Conteúdo dinâmico -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="rodape-container">
+    <div class="pilula-rodape">
+        <span class="unidade">MARS® Corporation / Recife-PE</span>
+        <span class="creditos">Developed by R. Viana ™ & AI</span>
+    </div>
+</footer>
+
+<script type="module" src="JS/operacao.js"></script>
+
+</body>
+</html>

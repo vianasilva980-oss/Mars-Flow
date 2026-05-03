@@ -1,0 +1,105 @@
+/* ==========================================
+   LAYOUT PRINCIPAL
+   ========================================== */
+
+.container-principal {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex: 1;
+
+    /* Evita quebra estranha no flex */
+    min-height: 0;
+}
+
+/* ==========================================
+   ÁREA CENTRAL (ILUSTRAÇÃO / CONTEÚDO)
+   ========================================== */
+
+.area-ilustracao {
+    flex: 1;
+    background-color: #001f5c;
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    /* Permite scroll interno (ESSENCIAL no mobile) */
+    overflow-y: auto;
+
+    /* Evita overflow quebrando layout */
+    min-width: 0;
+}
+
+/* ==========================================
+   IMAGEM CENTRAL
+   ========================================== */
+
+.img-central {
+    max-width: 70%;
+    height: auto;
+
+    /* Garante centralização consistente */
+    display: block;
+}
+
+/* ==========================================
+   ÁREA DE TRABALHO (PAINEL AZUL INTERNO)
+   ========================================== */
+
+.area-trabalho-azul {
+    flex: 1;
+
+    background-color: #001f3f;
+    margin: 15px;
+    border: 2px solid white;
+    border-radius: 30px;
+
+    /* Organização interna */
+    display: flex;
+    flex-direction: column;
+
+    /* Evita bugs de overflow com formulários */
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* ==========================================
+   RESPONSIVIDADE DO LAYOUT
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .container-principal {
+        flex-direction: column;
+    }
+
+    .area-ilustracao {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .img-central {
+        max-width: 100%;
+    }
+
+    .area-trabalho-azul {
+        margin: 10px 0;
+        border-radius: 20px;
+    }
+}
+
+/* ==========================================
+   EFEITO PARA TRANSIÇÃO DE IMAGEM NO SLIDER
+   ========================================== */
+
+.img-central {
+    transition: opacity 0.3s ease-in-out;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer; /* Adicione isso para mostrar a "mãozinha" do mouse */
+}

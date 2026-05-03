@@ -1,0 +1,26 @@
+.rodape-container {
+    margin-top: 10px;
+}
+
+.pilula-rodape {
+    background-color: #001f5c;
+    border-radius: 20px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.unidade, .creditos {
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+}
+css#sw-version {
+    font-family: monospace;
+    margin-left: 5px;
+    font-size: 0.9em;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding-left: 5px;
+}

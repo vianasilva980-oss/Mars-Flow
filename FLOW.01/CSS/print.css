@@ -1,0 +1,173 @@
+/* ========================================================= 
+   ESTILO DE IMPRESSÃO - VERSÃO COMPLETA E RESTAURADA
+   ========================================================= */
+@media print {
+    /* 1. Configurações de Página e Reset de Fundo */
+    @page {
+        size: A4;
+        margin: 8mm; /* Margem otimizada para caber tudo em 1 página */
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-sizing: border-box !important;
+    }
+
+    body {
+        background-color: white !important;
+        color: black !important;
+        font-family: 'Segoe UI', Tahoma, Arial, sans-serif !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Remove alturas forçadas que criam a 2ª página vazia */
+    .form-mars-container {
+        display: block !important;
+        min-height: auto !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Cabeçalho Principal */
+    header {
+        border: 3px solid #0056f3 !important;
+        border-radius: 30px !important;
+        text-align: center !important;
+        padding: 10px !important;
+        margin-bottom: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    header div:first-child {
+        color: #0056f3 !important;
+        font-size: 30pt !important;
+        font-weight: bold !important;
+    }
+
+    header div:last-child {
+        color: #333 !important;
+        font-size: 16pt !important;
+        text-transform: uppercase !important;
+        border-top: 1px solid #0056f3 !important;
+        width: 60% !important;
+        margin-top: 5px !important;
+    }
+
+    /* 3. Títulos de Seção (Barras Azuis e Verdes) */
+    .info-auto {
+        background-color: #0056f3 !important;
+        color: white !important;
+        border-radius: 50px !important;
+        padding: 8px 0 !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        margin: 15px 0 10px 0 !important;
+        font-size: 12pt !important;
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* Seção Verde (Coleta) */
+    .info-auto[style*="#4cd964"], 
+    .info-auto[style*="rgb(76, 217, 100)"] {
+        background-color: #4cd964 !important;
+    }
+
+    /* 4. Estrutura de Colunas (Mantendo o Layout) */
+    .form-grid-principal {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* DUAS COLUNAS */
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    /* 5. Linha de Busca (Período, Week, Data) */
+    .row-flex-busca {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .grupo-busca-mobile {
+        display: block !important;
+    }
+
+    /* 6. Estilo das Pílulas (Labels e Inputs) */
+    .input-group {
+        display: flex !important;
+        align-items: center !important;
+        border-radius: 50px !important;
+        border: 2px solid #0056f3 !important; /* Borda da pílula */
+        margin-bottom: 8px !important;
+        overflow: hidden !important;
+        height: 32px !important;
+        background-color: white !important;
+        break-inside: avoid !important;
+    }
+
+    /* Parte Azul/Verde da Pílula */
+    .input-group label {
+        background-color: #0056f3 !important;
+        color: white !important;
+        padding: 0 12px !important;
+        font-size: 8pt !important;
+        font-weight: bold !important;
+        min-width: 130px !important;
+        max-width: 130px !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-transform: uppercase !important;
+        border: none !important;
+    }
+
+    /* Ajuste para o verde na label */
+    .input-group label[style*="#4cd964"],
+    .input-group label[style*="rgb(76, 217, 100)"] {
+        background-color: #4cd964 !important;
+    }
+
+    /* Ajuste da borda da pílula para o setor verde */
+    .input-group:has(label[style*="#4cd964"]),
+    .input-group:has(label[style*="rgb(76, 217, 100)"]) {
+        border-color: #4cd964 !important;
+    }
+
+    /* Parte Branca do Input */
+    .input-group input {
+        border: none !important;
+        padding: 0 12px !important;
+        font-size: 9pt !important;
+        font-weight: bold !important;
+        color: black !important;
+        flex: 1 !important;
+        height: 100% !important;
+        background-color: transparent !important;
+    }
+
+    /* 7. Alinhamento Numérico */
+    input[id*="peso"], input[id*="valor"] {
+        text-align: right !important;
+    }
+
+    /* 8. Remoção de Elementos de Interface */
+    .form-footer, 
+    .btn-buscar-pilula, 
+    .busca-wrapper, 
+    button, 
+    .btn-chat-flutuante, 
+    .chat-full-container {
+        display: none !important;
+    }
+
+    /* 9. Forçar quebra de página zero */
+    .col {
+        page-break-inside: avoid !important;
+    }
+}

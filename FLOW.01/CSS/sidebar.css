@@ -1,0 +1,256 @@
+/* ==========================================
+       SIDEBAR (MENU LATERAL)
+========================================== */
+
+    .sidebar {
+    width: 130px;
+    background-color: #001f5c;
+    border-radius: 30px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: width 0.3s ease;
+    align-items: center;
+
+    /* --- ROLAGEM E ALTURA --- */
+    flex-shrink: 0; 
+    position: sticky;        /* Mantém a sidebar visível ao rolar a página */
+    top: 10px;               /* Alinha com o margin-top do seu container */
+    
+    /* Faz a sidebar ter a altura da tela menos as margens (10px topo + 10px fundo) */
+    height: calc(100vh - 20px); 
+    
+    overflow-y: auto;        /* Ativa a rolagem interna */
+    overflow-x: hidden;
+
+    /* Esconde a barra visualmente */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    align-items: baseline;
+    }
+
+    .sidebar::-webkit-scrollbar {
+    display: none;
+    }
+
+    .sidebar:hover {
+    width: 380px;
+    }
+
+    /* ==========================================
+       ITEM DO MENU
+       ========================================== */
+
+    .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Mantém o ícone como base */
+    gap: 15px;
+    padding: 10px;
+    border-radius: 50px; /* Pílula perfeita */
+    cursor: pointer;
+    transition: 0.3s;
+    
+    /* SOLUÇÃO DO DESALINHAMENTO: */
+    width: 100%; 
+    box-sizing: border-box;
+    flex-shrink: 0;
+    }
+
+    .menu-emoji {
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 50%;
+    flex-shrink: 0;
+    
+    /* Centralização do Emoji */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px; /* Tamanho do emoji */
+    
+    transition: transform 0.3s ease;
+    }
+
+    .menu-item span {
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        flex: 1;
+    }
+
+    .sidebar:hover .menu-item span {
+        opacity: 1;
+    }
+
+    .menu-item:hover {
+        background-color: #0d47c2;
+    }
+
+    .menu-item:hover .menu-emoji {
+        transform: scale(1.05);
+    }
+
+    /* ========================================== 
+    RESPONSIVO (MOBILE COMPLETO) 
+    ========================================== */
+    /* ==========================================================================
+   RESPONSIVIDADE COMPLETA - PROJETO MARS
+   (Organizado do maior para o menor para evitar conflitos de transição)
+   ========================================================================== */
+
+/* 1. TABLETS E REDIMENSIONAMENTO DE JANELA (Até 1024px) */
+@media (max-width: 1024px) {
+    .sidebar { 
+        width: 110px; 
+    }
+    .menu-item img { 
+        width: 75px; 
+        height: 75px; 
+    }
+}
+
+/* 2. TRANSIÇÃO PARA MODO HORIZONTAL (Até 850px) 
+   Esta regra resolve o erro de esmagamento quando você diminui a janela no PC */
+@media (max-width: 850px) {
+    .container-principal {
+        flex-direction: column !important; /* Empilha a sidebar no topo */
+        align-items: stretch !important;
+    }
+
+    .sidebar {
+        flex-direction: row !important;     /* Sidebar vira barra horizontal */
+        width: 100% !important;
+        height: 100% !important;            /* Libera a altura fixa do Desktop */
+        max-height: 180px;                  /* Limita altura para não cobrir a tela */
+        position: relative !important;      /* Sai do modo Sticky lateral */
+        top: 0 !important;
+        left: 0;
+        border-radius: 25px;
+        padding: 10px;
+        gap: 10px;
+
+        /* ROLAGEM HORIZONTAL INVISÍVEL */
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: none;              /* Firefox */
+        -ms-overflow-style: none;           /* IE/Edge */
+    }
+
+    .sidebar::-webkit-scrollbar {
+        display: none;                      /* Chrome/Safari */
+    }
+
+    .menu-item {
+        flex-direction: column !important;  /* Ícone em cima, texto embaixo */
+        justify-content: center;
+        align-items: center;
+        min-width: 100px;                   /* Mantém largura mínima no scroll */
+        padding: 10px 5px;
+        flex-shrink: 0;                     /* Impede que o item seja "esmagado" */
+        width: auto !important;
+    }
+
+    .menu-item img {
+        width: 60px !important;
+        height: 60px !important;
+        padding: 10px;
+        background: white;
+        border-radius: 50%;
+    }
+
+    /* TEXTO NO MOBILE/TRANSIÇÃO COM QUEBRA DE LINHA */
+    .menu-item span {
+        opacity: 1 !important;              /* Texto sempre visível */
+        font-size: 11px;
+        text-align: center;
+        white-space: normal !important;     /* Permite quebrar linha se for longo */
+        max-width: 90px;
+        line-height: 1.2;
+        word-break: break-word;
+        margin-top: 5px;
+    }
+
+    /* Ajuste das áreas centrais para ocupar 100% após a quebra */
+    .area-ilustracao, .area-trabalho-azul, .tabela-container {
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+}
+
+    /* 3. CELULARES PEQUENOS (Até 480px) 
+    Ajustes finais de escala para telas muito estreitas */
+    @media (max-width: 480px) {
+        .sidebar {
+            padding: 5px;
+            gap: 5px;
+        }
+        .menu-item {
+            min-width: 80px;
+        }
+        .menu-item img {
+            width: 50px !important;
+            height: 50px !important;
+        }
+        .menu-item span {
+            font-size: 10px !important;
+        }
+    }
+    /* ==========================================
+    HEADER (TOPO) - Ajuste do Círculo
+    ========================================== */
+    @media (max-width: 600px) {
+        /* ... suas regras de topo-container e pilula-direita ... */
+
+        .circle-user {
+            width: 80px;  /* Reduzi um pouco para telas pequenas */
+            height: 80px;
+            font-size: 30px; /* Emoji menor no mobile */
+        }
+    }
+
+    /* ==========================================
+    SIDEBAR (VIRA HORIZONTAL) - Substituindo img por Emoji
+    ========================================== */
+    @media (max-width: 800px) {
+
+    .sidebar {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-radius: 25px;
+    }
+
+    /* Ajuste do container do emoji no mobile */
+    .menu-emoji {
+        width: 50px;
+        height: 50px;
+        font-size: 25px; /* Tamanho do emoji reduzido */
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        justify-content: center;
+        min-width: 100px;
+        gap: 5px; /* Menor espaço entre emoji e texto */
+    }
+
+    .menu-item span {
+        opacity: 1;
+        font-size: 11px;
+        text-align: center;
+        white-space: normal; /* Permite quebra de linha se o texto for longo */
+    }
+}

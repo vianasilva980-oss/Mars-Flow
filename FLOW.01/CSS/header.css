@@ -1,0 +1,200 @@
+/* ========================================== HEADER (TOPO) - COMPLETO ========================================== */ 
+.topo-container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    background-color: #001f5ce0; 
+    padding: 15px; 
+    width: 100%; 
+    border-radius: 20px; 
+    box-sizing: border-box; 
+} 
+
+/* ========================================== BLOCO ESQUERDO (INTERATIVO) ========================================== */ 
+.pilula-esquerda { 
+    background-color: #001f5c; 
+    border: 3px solid #001f5c; 
+    border-radius: 100px; 
+    padding: 10px; 
+    display: flex; 
+    align-items: center; 
+    overflow: hidden; 
+    cursor: pointer; 
+    min-width: 135px; 
+    max-width: 135px; 
+    height: 135px; 
+    transition: max-width 0.5s ease-in-out; 
+} 
+
+/* O clique no celular funciona aqui porque não haverá trava no responsivo */
+.pilula-esquerda:hover { 
+    max-width: 600px; 
+} 
+
+/* ========================================== BLOCO DIREITO (INFORMATIVO) ========================================== */ 
+.pilula-direita { 
+    background-color: #001f5c; 
+    border: 3px solid #001f5c; 
+    border-radius: 50px; 
+    padding: 10px 20px; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    flex: 1; 
+    min-width: 280px; 
+    justify-content: center; 
+    box-sizing: border-box; 
+    flex-wrap: wrap; 
+} 
+
+/* ========================================== AGRUPAMENTOS INTERNOS ========================================== */ 
+.pill-group { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+} 
+
+/* ========================================== ÍCONE DE USUÁRIO (AJUSTADO PARA EMOJI) ========================================== */ 
+.circle-user { 
+    background-color: white; 
+    width: 110px; 
+    height: 110px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-shrink: 0; 
+    /* Ajustes para centralizar o Emoji perfeitamente */
+    font-size: 60px; 
+    line-height: 0; 
+} 
+
+.circle-user img { 
+    width: 100%; 
+    height: auto; 
+} 
+
+/* ========================================== TEXTO EXPANSÍVEL (SETOR) ========================================== */ 
+.pill-setores { 
+    background-color: #1626ef; 
+    color: white; 
+    padding: 20px 40px; 
+    border-radius: 50px; 
+    font-weight: bold; 
+    font-size: 0.90rem; 
+    text-transform: uppercase; 
+    white-space: nowrap; 
+    opacity: 0; 
+    transition: opacity 0.3s; 
+} 
+
+.pilula-esquerda:hover .pill-setores { 
+    opacity: 1; 
+} 
+
+/* ========================================== LOGO BOX ========================================== */ 
+.logo-box { 
+    background: white; 
+    border: 3px solid #001f5c; 
+    border-radius: 50px; 
+    padding: 10px 30px; 
+    font-size: clamp(18px, 2.5vw, 28px); 
+    font-weight: bolder; 
+    color: #001f5c; 
+    white-space: nowrap; 
+    flex: 0 1 auto; 
+} 
+
+/* ========================================== DESCRIÇÃO ========================================== */ 
+.desc-box { 
+    background: #e6e6e6; 
+    border: 3px solid #001f5c; 
+    border-radius: 50px; 
+    padding: 10px 20px; 
+    font-size: clamp(12px, 1.8vw, 18px); 
+    font-weight: bold; 
+    color: #001f5c; 
+    text-align: center; 
+    flex: auto; 
+    min-width: 100px; 
+    white-space: normal; 
+} 
+
+/* ========================================== RESPONSIVO (HEADER) ========================================== */ 
+@media (max-width: 600px) { 
+    .topo-container { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px; 
+    } 
+
+    /* A pílula começa como círculo no mobile, mas SEM trava de max-width */
+    .pilula-esquerda { 
+        min-width: 110px; 
+        max-width: 110px; 
+        height: 110px; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        padding: 0 !important; 
+        margin: 0 auto; 
+        border-radius: 50%; 
+    } 
+
+    /* Quando clicar no celular, ela expande usando o hover sticky */
+    .pilula-esquerda:hover {
+        max-width: 90vw;
+        border-radius: 100px;
+        justify-content: flex-start;
+        padding: 10px !important;
+    }
+
+    .pill-group { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 20 !important; 
+        width: 100%; 
+    } 
+
+    .circle-user { 
+        width: 85px; 
+        height: 85px; 
+        background-color: white; 
+        border-radius: 50%; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        font-size: 45px; 
+        line-height: 0; 
+        flex-shrink: 0;
+    } 
+
+    /* Oculto por padrão, aparece quando clica (hover) */
+    .pill-setores { 
+        display: none; 
+    } 
+
+    .pilula-esquerda:hover .pill-setores {
+        display: block;
+        opacity: 1;
+        padding: 15px 25px;
+        font-size: 0.75rem;
+    }
+
+    .pilula-direita { 
+        width: 100%; 
+        border-radius: 25px; 
+        padding: 15px; 
+    } 
+
+    .logo-box, .desc-box { 
+        width: 100%; 
+        text-align: center; 
+    } 
+}

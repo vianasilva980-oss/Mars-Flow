@@ -1,0 +1,311 @@
+/* ========================================== 
+CONTAINER PRINCIPAL ========================================== */
+.form-mars-container {
+    width: 100%;
+    height: 100%; /* Garante que ocupe a altura toda */
+    padding: 10px; /* Remove padding-top (0) para encostar no topo */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Força os filhos (header) a ocuparem a largura total */
+    justify-content: space-between; /* Garante que comece do topo */
+    box-sizing: border-box;
+}
+
+
+/* ========================================== 
+HEADER BUSCA 
+========================================== */
+.header-busca {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.busca-wrapper {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-id {
+    border-radius: 50px;
+    padding: 0 25px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: #333;
+    background-color: white;
+}
+
+.btn-buscar-pilula {
+    border-radius: 50px !important;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.btn-buscar-pilula:hover {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+}
+
+/* ========================================== 
+INPUT GROUP (PÍLULAS) 
+========================================== */
+.input-group {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    overflow: hidden;
+    height: 40px;
+    margin-bottom: 15px;
+    width: 100%;
+    background-color: white;
+}
+
+/* LABEL AZUL */
+.input-group label {
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 100px;
+    font-size: 15px;
+    font-weight: 900;
+    min-width: 190px; /* Alinhamento vertical padronizado */
+    max-width: 200px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 1;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* INPUT BRANCO */
+.input-group input {
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    flex: 1;
+    height: 100%;
+    font-weight: bold;
+    color: #333;
+    background-color: transparent;
+}
+/* SELECT BRANCO (ESTILO PÍLULA) */
+.input-group select {
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    flex: 1;
+    height: 100%;
+    font-weight: bold;
+    color: #333;
+    background-color: transparent;
+    cursor: pointer;
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Adiciona uma setinha azul discreta à direita */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://w3.org' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230056f3' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+/* ========================================== 
+TÍTULOS 
+========================================== */
+.info-auto {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ========================================== 
+GRID PRINCIPAL 
+========================================== */
+.form-grid-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+/* ========================================== 
+TABELA (PLANILHA) 
+========================================== */
+.tabela-container {
+    width: 100%;
+    margin-top: 40px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden; /* Garante o arredondamento das quinas */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.tabela-mars {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #001a7d;
+}
+
+.tabela-mars thead {
+    background-color: #0056f3; /* Azul igual aos inputs */
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.tabela-mars th, .tabela-mars td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: #eee;
+}
+
+.tabela-mars tbody tr:hover {
+    background-color: rgba(0, 86, 243, 0.05);
+}
+
+/* Botões de Ação na Tabela */
+.btn-tabela-edit, .btn-tabela-del {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+.tabela-container {
+    width: 100%;
+    flex-shrink: 0; /* Impede o container de encolher no celular */
+    overflow-x: auto;
+}
+
+
+.btn-tabela-edit:hover { color: #0056f3; transform: scale(1.2); }
+.btn-tabela-del:hover { color: #d9534f; transform: scale(1.2); }
+
+/* ========================================== 
+BOTÕES RODAPÉ 
+========================================== */
+.form-footer {
+    display: flex;
+    flex-wrap: wrap;       /* ESSENCIAL: Permite que os botões saltem para baixo */
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    width: 100%;
+    padding-bottom: 10px;  /* Deixa os 20px de margem que você pediu */
+    padding-top: 40px;  /* Espaço mínimo entre o conteúdo e os botões */
+}
+
+.btn-voltar, .btn-salvar, .btn-registrar-central {
+    border-radius: 50px;
+    padding: 14px 40px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    
+    /* AJUSTE PARA TABLET */
+    flex: 1;               /* Faz os botões crescerem para ocupar a linha */
+    min-width: 250px;      /* Se o botão não tiver pelo menos 250px, ele SALTA para baixo */
+    text-align: center;
+}
+
+.btn-voltar:hover, 
+.btn-salvar:hover, 
+.btn-registrar-central:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* ========================================== 
+MOBILE (FORCE 100%) 
+========================================== */
+@media (max-width: 600px) {
+    .btn-voltar, .btn-salvar, .btn-registrar-central {
+        flex: 1 1 100%;    /* No celular, garante 100% de largura sem erro */
+    }
+}
+/* No seu CSS, procure a parte do Mobile (max-width: 800px) e ajuste: */
+
+@media (max-width: 800px) {
+    /* 1. Garante que o container "solte" a tabela para rolar */
+    .tabela-container {
+        display: block;
+        width: 100%;
+        overflow-x: auto !important; /* Força a rolagem lateral no dedo */
+        -webkit-overflow-scrolling: touch; /* Deixa a rolagem suave no iPhone/Android */
+    }
+
+    /* 2. Força a tabela a NÃO diminuir no celular */
+    .tabela-mars {
+        width: auto !important; /* Deixa ela crescer além da tela */
+        min-width: 800px !important; /* Valor que garante que as 5 colunas apareçam */
+    }
+
+    /* 3. Evita que o texto empilhe nas células */
+    .tabela-mars th, .tabela-mars td {
+        white-space: nowrap !important;
+        padding: 10px 15px !important;
+        font-size: 12px; /* Diminui um pouco a letra no celular */
+    }
+}
+
+/* ========================================== 
+CAMPOS NUMÉRICOS 
+========================================== */
+input[id*="peso"], input[id*="valor"] {
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace; /* Estilo planilha */
+}
+
+/* ========================================== 
+MOBILE (REGRAS FINAIS) 
+========================================== */
+@media (max-width: 800px) {
+    .form-mars-container { padding: 15px; }
+
+    /* Grid vira 1 coluna */
+    .form-grid-principal { grid-template-columns: 1fr !important; }
+
+    /* Grupos de Busca Empilham */
+    .row-flex-busca { flex-direction: column !important; gap: 0 !important; }
+    .grupo-busca-mobile { flex-direction: column !important; width: 100% !important; gap: 0 !important; }
+
+    /* Pílulas Mobile */
+    .input-group { height: 45px !important; margin-bottom: 12px !important; }
+    .input-group label { min-width: 100px !important; max-width: 100px !important; font-size: 15px !important; }
+
+    /* Tabela vira scroll horizontal no celular para não quebrar */
+    .tabela-container { overflow-x: auto; }
+    .tabela-mars { min-width: 600px; }
+
+    /* Botões Rodapé Mobile */
+    .form-footer { flex-direction: column; }
+    .btn-voltar, .btn-salvar, .btn-registrar-central { width: 100%; }
+}
+/* Garante que os grupos de busca empilhem no celular */
+@media (max-width: 800px) {
+    .row-flex-busca {
+        flex-direction: column !important;
+    }
+    .grupo-busca-mobile {
+        flex-direction: column !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+}

@@ -1,0 +1,73 @@
+/* ==========================================
+   BOTÃO DE INSTALAÇÃO
+   ========================================== */
+.pwa-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    z-index: 9998;
+}
+
+.pwa-popup {
+    position: fixed;
+    bottom: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 320px;
+    background: #0a1f44;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    z-index: 9999;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.pwa-popup.show {
+    bottom: 40px;
+}
+
+.pwa-icon img {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.pwa-popup h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.pwa-popup p {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.pwa-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.pwa-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#pwa-instalar {
+    background: #00c2ff;
+    color: #000;
+}
+
+#pwa-cancelar {
+    background: #2c3e50;
+    color: white;
+}

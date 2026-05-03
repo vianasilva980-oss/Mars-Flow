@@ -1,0 +1,164 @@
+/* ==========================================
+   5. COMPONENTES ESPECÍFICOS (LOGIN / AÇÕES)
+   ========================================== */
+.login-sidebar {
+    background-color: #1abc9c; 
+    width: 450px; 
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px; 
+    color: #001f3f;
+    height: 100%;
+}
+
+.user-icon-large {
+    background-color: #001f3f;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    
+    /* ADICIONADO PARA SUPORTE A EMOJI */
+    font-size: 80px; 
+    line-height: 1;
+}
+
+/* Mantido caso você ainda use imagens em algum lugar do login */
+.user-icon-large img {
+    width: 65%; 
+    filter: brightness(0) invert(1); 
+}
+
+#titulo-login {
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+    border-radius: 50px; 
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.login-sidebar input {
+    width: 90%;
+    padding: 18px 25px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.btn-entrar {
+    background-color: #001f3f;
+    color: white;
+    border: none;
+    width: 160px;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-entrar:hover {
+    transform: scale(1.1);
+    background-color: #002d5c;
+}
+
+.menu-acao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.circle-icon-acao {
+    background-color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #0056b3;
+    flex-shrink: 0;
+}
+
+/* Suporte para emoji também nos ícones de ação se precisar */
+.circle-icon-acao span {
+    font-size: 25px;
+}
+
+.circle-icon-acao img {
+    width: 60%;
+}
+
+.pill-btn-acao {
+    flex-grow: 1;
+    background-color: white;
+    color: #001f3f;
+    border: none;
+    padding: 12px 10px;
+    border-radius: 25px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.pill-btn-acao:hover {
+    background-color: #e0e0e0;
+}
+
+.pill-btn-acao.color-verde {
+    color: #1abc9c;
+}
+
+/* ==========================================
+   REGRAS PARA CELULAR (Telas até 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    #login-container {
+        flex-direction: column;
+        padding: 15px; 
+        background-color: #001f5c; 
+    }
+
+    .login-sidebar {
+        width: 100%; 
+        height: auto;
+        padding: 30px 10px;
+        border-radius: 25px; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
+    }
+
+    .user-icon-large {
+        width: 110px;
+        height: 110px;
+        font-size: 60px; /* Emoji menor no celular */
+        margin-bottom: 20px;
+    }
+
+    .login-main-view {
+        display: none; 
+    }
+
+    #titulo-login {
+        font-size: 1.2rem;
+        width: 85%;
+        margin-bottom: 25px;
+    }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARS - Operação de Segurança</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="topo-container">
+    <div class="pilula-esquerda">
+        <div class="pill-group">
+            <div class="circle-user">🛡️</div>
+            <div class="pill-setores" id="nome-setor-pill">SEGURANÇA</div>
+        </div>
+    </div>
+
+    <div class="pilula-direita">
+        <div class="logo-box">MARS</div>
+        <div class="desc-box" id="descricao-setor">
+            Controle e gerenciamento de HSE 
+        </div>
+    </div>
+</header>
+
+<main class="container-principal">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="menu-item btn-home" onclick="window.location.href='index.html'">
+            <div class="menu-emoji">🏠</div> 
+            <span>SAIR / HOME</span>
+        </div>
+
+        <div class="menu-item" id="acao-coletaderesiduos">
+            <div class="menu-emoji">♻️</div>
+            <span>COLETA DE RESÍDUOS</span>
+        </div>
+
+        <div class="menu-item" id="acao-criarsenf">
+            <div class="menu-emoji">📄</div>
+            <span>CRIAR SENF</span>
+        </div>
+
+        <div class="menu-item" id="acao-faroldeintegração">
+            <div class="menu-emoji">🚦</div>
+            <span>FAROL DE INTEGRAÇÕES</span>
+        </div>
+
+        <div class="menu-item" id="acao-correspondencia">
+            <div class="menu-emoji">📬</div>
+            <span>CORRESPONDÊNCIAS</span>
+        </div>
+
+        <div class="menu-item" id="acao-integracoes">
+            <div class="menu-emoji">🤝</div>
+            <span>INTEGRAÇÕES</span>
+        </div>
+
+        <div class="menu-item" id="acao-cadastrarveiculo">
+            <div class="menu-emoji">🚛</div>
+            <span>CADASTRAR TIP. VEÍCULO</span>
+        </div>
+
+        <div class="menu-item" id="acao-controledeclavicurario">
+            <div class="menu-emoji">🔑</div>
+            <span>CONTROLE DE CLAVICULÁRIO</span>
+        </div>
+
+        <div class="menu-item" id="acao-controleeregistrodemateriais">
+            <div class="menu-emoji">🛠️</div>
+            <span>REGISTRO DE MATERIAIS</span>
+        </div>
+
+        <div class="menu-item" id="acao-cadastrarfornecedor">
+            <div class="menu-emoji">🏭</div>
+            <span>CADASTRAR FORNECEDOR</span>
+        </div>
+
+        <div class="menu-item" id="acao-cadastrartransportadora">
+            <div class="menu-emoji">🏢</div>
+            <span>CADASTRAR TRANSPORTADORA</span>
+        </div>
+
+        <div class="menu-item" id="acao-cadastrarmotorista">
+            <div class="menu-emoji">🪪</div>
+            <span>CADASTRAR MOTORISTA</span>
+        </div>
+
+        <div class="menu-item" id="acao-importarperido">
+            <div class="menu-emoji">📂</div>
+            <span>IMPORTAR PERÍODO .XLSX</span>
+        </div>
+
+        <div class="menu-item" id="acao-recebimentos">
+            <div class="menu-emoji">📥</div>
+            <span style="color: #1abc9c;">RECEBIMENTOS</span>
+        </div>
+        
+        <div class="menu-item" id="acao-solicitacaodeestacionamento">
+            <div class="menu-emoji">🅿️</div>
+            <span style="color: #1abc9c;">ESTACIONAMENTO</span>
+        </div>
+
+        <div class="menu-item" id="acao-solicitacaodezona4">
+            <div class="menu-emoji">🚧</div>
+            <span style="color: #1abc9c;">SOLICITAÇÃO ZONA 4</span>
+        </div>
+    
+    </aside>
+
+    <section class="area-ilustracao" id="painel-segurança">
+        <img src="img/img/areaprincipal.png" class="img-central" id="img-boas-vindas" onclick="proximoSlide()" style="cursor: pointer;">
+
+        <div id="container-formularios" style="display: none; width: 100%; height: 100%; flex-direction: row; align-items: stretch;">
+            <div class="login-sidebar">
+                <div class="user-icon-large">
+                    <div class="circle-user" style="width: 100px; height: 100px; font-size: 50px; margin: 0 auto;">🛡️</div>
+                </div>
+                <h2 id="titulo-login">PAINEL HSE</h2>
+                <div id="info-setor" style="color: white; text-align: center;"> 
+                    <p>Segurança e Saúde Ocupacional</p>
+                </div>
+            </div>
+            <div class="login-main-view" id="area-trabalho" style="flex-grow: 1; background-color: #001f5c; padding: 20px;"></div>
+        </div>
+    </section>
+</main>
+
+<footer class="rodape-container">
+    <div class="pilula-rodape">
+        <span class="unidade">MARS® Corporation / Recife-PE</span>
+        <span class="creditos">Developed by R. Viana ™ & AI</span>
+    </div>
+</footer>
+
+<script type="module" src="JS/operacao.js"></script>
+</body>
+</html>
